@@ -1,0 +1,55 @@
+<h1 id="Hexo-Filter-MathJax"><a href="#Hexo-Filter-MathJax" class="headerlink" title="Hexo Filter MathJax"></a>Hexo Filter MathJax</h1><p><a href="https://www.npmjs.com/package/hexo-filter-mathjax"><img src="https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square" alt="npm-image"></a><br><a href="LICENSE"><img src="https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square" alt="lic-image"></a></p>
+<p>Server side <a href="http://www.mathjax.org/">MathJax</a> Renderer Plugin for <a href="http://hexo.io/">Hexo</a>.</p>
+<p><strong>WARNING: No front-end scripts and other Math plugins are required. Remove them ALL before using this plugin.</strong></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p><img src="https://img.shields.io/github/languages/code-size/next-theme/hexo-filter-mathjax?style=flat-square" alt="size-image"><br><a href="https://www.npmjs.com/package/hexo-filter-mathjax"><img src="https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square" alt="dm-image"></a><br><a href="https://www.npmjs.com/package/hexo-filter-mathjax"><img src="https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square" alt="dt-image"></a></p>
+<pre><code class="bash">$ npm install hexo-filter-mathjax
+$ hexo clean
+</code></pre>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>You can configure this plugin in Hexo <code>_config.yml</code>. Default options:</p>
+<pre><code class="yaml">mathjax:
+  tags: none # or &#39;ams&#39; or &#39;all&#39;
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+</code></pre>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Set <code>mathjax: true</code> in Front-matter of each article (post / page) that you would like to enable MathJax. For example:</p>
+<pre><code class="md">---
+title: On the Electrodynamics of Moving Bodies
+categories: Physics
+date: 1905-06-30 12:00:00
+mathjax: true
+---
+</code></pre>
+<p>Then you can use the LaTeX syntax in the article.</p>
+<h3 id="Renderer"><a href="#Renderer" class="headerlink" title="Renderer"></a>Renderer</h3><p><a href="https://github.com/wzpan/hexo-renderer-pandoc">hexo-renderer-pandoc</a> is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that inline Math (..<code>$...$</code>) must not have white spaces <strong>after the opening <code>$</code> and before the ending <code>$</code></strong>. For example:</p>
+<pre><code class="diff">-$ \epsilon_0 $
++$\epsilon_0$
+-$ \frac{\partial}{\partial t} $
++$\frac{\partial}{\partial t}$
+</code></pre>
+<p>If you are using other renderers, such as <a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, an underscore (<code>_</code>) may be interpreted as the start of italic text in Markdown, or subscripted mark in TeX. Use <code>\</code> to escape if necessary:</p>
+<pre><code class="diff">-$\epsilon_0$
++$\epsilon\_0$
+-\begin{eqnarray*}
++\begin{eqnarray\*}
+-\\
++\\\\
+</code></pre>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><p>Write the following LaTeX code:</p>
+<pre><code>$$
+i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
+$$
+</code></pre>
+<pre><code>\begin{eqnarray\*}
+\nabla\cdot\vec{E}&amp;=&amp;\frac{\rho}{\epsilon_0}\\\\
+\nabla\cdot\vec{B}&amp;=&amp;0\\\\
+\nabla\times\vec{E}&amp;=&amp;-\frac{\partial B}{\partial t}\\\\
+\nabla\times\vec{B}&amp;=&amp;\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\\\
+\end{eqnarray\*}
+</code></pre>
+<p>Then you will get:</p>
+<p><img src="sample1.svg"></p>
+<p><img src="sample2.svg"></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Released under the MIT License</p>
