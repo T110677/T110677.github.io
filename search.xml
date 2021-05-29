@@ -195,14 +195,22 @@ $$
 <p><font size=4><strong>贝塔</strong></font>：<br>1.$B(\alpha,\beta)=\int_0^1y^{\alpha-1}(1-y)^{\beta-1}dy=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$<br>2.设$X_1 \backsim Gamma(\alpha_1,\lambda),X_2 \backsim Gamma(\alpha_2,\lambda),$<br>(1)$Y_1=X_1+X_2 \backsim Gamma(\alpha_1+\alpha_2,\lambda)$;<br>(2)$Y_2=X_1/(X_1+X_2) \backsim Beta(\alpha_1,\alpha_2)$;<br>(3)$Y_1$与$Y_2$独立。</p>
 <p><font size=4><strong>卡方</strong></font>：<br>1.设$X_i \overset{iid}\backsim N(0,1) ,i=1,2,\cdots,n$,随机变量$X=X_1^2+X_2^2+\cdots+X_n^2 \backsim \mathcal X^2(n)$<br>2.若$X \backsim \mathcal X^2(n) ,Y \backsim \mathcal X^2(m),$则$X+Y\backsim \mathcal X^2(n)$,即卡方分布具有可加性。<br>3.设$X_i \overset{iid}\backsim N(0,1) ,i=1,2,\cdots,n$，则:<br>(1)$\bar X \backsim N(\mu,\sigma^2/n)$<br>(2)$\frac {nS_n^2}{\sigma^2}=\frac {\sum_{i=1}^n (X_i-\bar X)^2}{\sigma^2}\backsim \mathcal X^2(n-1)$<br>(3)$\bar X$ 与 $S_n^2$相互独立。</p>
 <p><font size=4><strong>t</strong></font>：<br>(1)设$ X \backsim N(0,1),Y \backsim \mathcal X^2(n) $,且$X$与$Y$独立，则随机变量$T = \frac {X}{\sqrt{Y/n}}$服从自由度为$n$的$t$分布。<br>(2)设$f_n(x)$为$t$分布的密度函数，则有：$ \underset{n \to \infty}{\lim} f_n(x)=\frac 1{\sqrt{2\pi}}\mathbf{exp}\{-x^2/2\}$</p>
-<p><font size=4><strong>Z</strong></font>：<br>设$ X \backsim \mathcal X^2(n),Y \backsim \mathcal X^2(m) $,且$X$与$Y$独立，则随机变量$Z = \frac {X/m}{Y/n}$服从第一自由度为$n$，第二自由度为$m$的$z$分布。</p>
+<p><font size=4><strong>F</strong></font>：<br>设$ X \backsim \mathcal X^2(n),Y \backsim \mathcal X^2(m) $,且$X$与$Y$独立，则随机变量$Z = \frac {X/m}{Y/n}$服从第一自由度为$n$，第二自由度为$m$的$F$分布。</p>
 <h1 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h1><p><font size=4><strong>总体</strong></font>：所研究全部个体的集合。(通常用$X$来刻画，总体服从分布函数为$F(x)$分布记为：$X \backsim F~$)</p>
 <p><font size=4><strong>样本</strong></font>：观测总体得到的一部分个体。(通常用$X_1,X_2,\cdots,X_n$来刻画)</p>
 <p><font size=4><strong>样本观测值</strong></font>：通过观测样本所得到的测量值。(通常用$x_1,x_2,\cdots,x_n$来刻画)</p>
 <p><font size=4><strong>简单随机抽样($X_i \overset{iid} \backsim F~$)</strong></font>：(1)每个样本选中的机会相同(保证了$X_i$和$X$同分布)。(2)每个样本的选取是独立的。</p>
 <p><font size=4><strong>统计量</strong></font>：$T$为样本的函数且不含任何参数:$T=T(X_1,X_2,\cdots,X_n)$</p>
 <p><font size=4><strong>分位数$F_\alpha(x)$</strong></font>：可形象的记为$x&lt;\alpha$范围内，密度函数$f(x)$的总面积。</p>
-<h1 id="定理："><a href="#定理：" class="headerlink" title="定理："></a>定理：</h1><p>1.常见枢纽量：<br>(1)设总体$X \backsim N(\mu,\sigma^2)$,若$\sigma$已知，则$ T = \frac{\bar X - \mu}{\sigma / \sqrt n} \backsim N(0,1) $<br>(2)设总体$X \backsim N(\mu,\sigma^2)$,若$\sigma$未知，则$ T = \frac{\bar X - \mu}{S_n^* / \sqrt n} \backsim t(n-1) $<br>(3)设总体$X \backsim N(\mu,\sigma^2)$,若$\mu$已知，则$ T = \sum_{i=1}^n \frac{(X_i-\mu)^2}{\sigma^2} \backsim \mathcal X^2(n) $<br>(4)设总体$X \backsim N(\mu,\sigma^2)$,若$\mu$未知，则$ T = \frac{nS_n^2}{\sigma^2} \sum_{i=1}^n \frac{(X_i-\bar X)^2}{\sigma^2} \backsim \mathcal X^2(n-1) $</p>
+<h1 id="定理："><a href="#定理：" class="headerlink" title="定理："></a>定理：</h1><p>1.常见枢纽量：<br>(1)设总体$X \backsim N(\mu,\sigma^2)$,若$\sigma$已知，则<br>$$<br>T = \frac{\bar X - \mu}{\sigma / \sqrt n} \backsim N(0,1)<br>$$</p>
+<p>(2)设总体$X \backsim N(\mu,\sigma^2)$,若$\sigma$未知，则<br>$$<br>T = \frac{\bar X - \mu}{S_n^* / \sqrt n} \backsim t(n-1)<br>$$</p>
+<p>(3)设总体$X \backsim N(\mu,\sigma^2)$,若$\mu$已知，则<br>$$<br>T = \sum_{i=1}^n \frac{(X_i-\mu)^2}{\sigma^2} \backsim \mathcal X^2(n)<br>$$</p>
+<p>(4)设总体$X \backsim N(\mu,\sigma^2)$,若$\mu$未知，则<br>$$<br> T = \frac{nS_n^2}{\sigma^2} \sum_{i=1}^n \frac{(X_i-\bar X)^2}{\sigma^2} \backsim \mathcal X^2(n-1)<br>$$</p>
+<p>(5)设总体$X \backsim N(\mu_1,\sigma_1^2),Y \backsim N(\mu_2,\sigma_2^2)$,已知$\sigma_1^2=\sigma_2^2=\sigma^2$,则<br>$$<br>T=\frac{(\bar X - \bar Y)-(\mu_1 - \mu_2)}{S_w \sqrt{1/m+1/n}} \backsim t(m+n-2)<br>$$<br>其中<br>$$<br>S_w=\frac{mS_{1m}^2+nS_{2n}^2}{m+n-2}<br>$$</p>
+<p>(6)设总体$X \backsim N(\mu_1,\sigma_1^2),Y \backsim N(\mu_2,\sigma_2^2)$,已知$\sigma_1^2,\sigma_2^2$,则<br>$$<br>T =  \frac{(\bar X - \bar Y)-(\mu_1 - \mu_2)}{\sqrt{\sigma_1^2/m+\sigma_2^2/n}} \backsim N(0,1)<br>$$</p>
+<p>(7)设总体$X \backsim N(\mu_1,\sigma_1^2),Y \backsim N(\mu_2,\sigma_2^2)$,$\mu_1,\mu_2$已知,则<br>$$<br>T_1=\sum_{i=1}^n \frac {(X_i-\mu_1)^2}{\sigma_1^2} \backsim \mathcal X^2(m),<br>$$<br>$$<br>T_2=\sum_{i=1}^n \frac {(X_i-\mu_2)^2}{\sigma_2^2} \backsim \mathcal X^2(n),<br>$$<br>$$<br>T=\frac{T_1/m}{T_2/n}=\frac{n\sum_{i=1}^n(X_i-\mu_1)^2 \sigma_2^2}{m\sum_{i=1}^n(X_i-\mu_2)^2 \sigma_1^2} \backsim F(m,n)<br>$$</p>
+<p>(8)设总体$X \backsim N(\mu_1,\sigma_1^2),Y \backsim N(\mu_2,\sigma_2^2)$,$\mu_1,\mu_2$未知,则<br>$$<br>T_1=\sum_{i=1}^n \frac {(X_i-\bar X)^2}{\sigma_1^2} \backsim \mathcal X^2(m-1),<br>$$<br>$$<br>T_2=\sum_{i=1}^n \frac {(X_i-\bar X)^2}{\sigma_2^2} \backsim \mathcal X^2(n-1),<br>$$<br>$$<br>T=\frac{T_1/m}{T_2/n}=\frac{S_{1m}^{*2} \sigma_2^2}{S_{2n}^{*2} \sigma_1^2} \backsim F(m-1,n-1)<br>$$</p>
+<p>(9)设总体$X \backsim \mathbf{Exp(\lambda)}$,则<br>$$<br>T=2\lambda n \bar X \backsim Gamma(n,1/2) = \mathcal x^2(2n)<br>$$</p>
 ]]></content>
       <tags>
         <tag>数学</tag>
